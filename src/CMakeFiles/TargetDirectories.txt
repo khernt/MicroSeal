@@ -1,0 +1,3 @@
+/home/khern/Desktop/MicroSeal/src/CMakeFiles/rebuild_cache.dir
+/home/khern/Desktop/MicroSeal/src/CMakeFiles/test.dir
+/home/khern/Desktop/MicroSeal/src/CMakeFiles/edit_cache.dir
