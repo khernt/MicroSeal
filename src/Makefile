@@ -111,17 +111,57 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named test
+# Target rules for targets named encrypt
 
 # Build rule for target.
-test: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test
-.PHONY : test
+encrypt: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 encrypt
+.PHONY : encrypt
 
 # fast build rule for target.
-test/fast:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
-.PHONY : test/fast
+encrypt/fast:
+	$(MAKE) -f CMakeFiles/encrypt.dir/build.make CMakeFiles/encrypt.dir/build
+.PHONY : encrypt/fast
+
+#=============================================================================
+# Target rules for targets named decrypt
+
+# Build rule for target.
+decrypt: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 decrypt
+.PHONY : decrypt
+
+# fast build rule for target.
+decrypt/fast:
+	$(MAKE) -f CMakeFiles/decrypt.dir/build.make CMakeFiles/decrypt.dir/build
+.PHONY : decrypt/fast
+
+first_decryption.o: first_decryption.cpp.o
+
+.PHONY : first_decryption.o
+
+# target to build an object file
+first_decryption.cpp.o:
+	$(MAKE) -f CMakeFiles/decrypt.dir/build.make CMakeFiles/decrypt.dir/first_decryption.cpp.o
+.PHONY : first_decryption.cpp.o
+
+first_decryption.i: first_decryption.cpp.i
+
+.PHONY : first_decryption.i
+
+# target to preprocess a source file
+first_decryption.cpp.i:
+	$(MAKE) -f CMakeFiles/decrypt.dir/build.make CMakeFiles/decrypt.dir/first_decryption.cpp.i
+.PHONY : first_decryption.cpp.i
+
+first_decryption.s: first_decryption.cpp.s
+
+.PHONY : first_decryption.s
+
+# target to generate assembly for a file
+first_decryption.cpp.s:
+	$(MAKE) -f CMakeFiles/decrypt.dir/build.make CMakeFiles/decrypt.dir/first_decryption.cpp.s
+.PHONY : first_decryption.cpp.s
 
 first_encryption.o: first_encryption.cpp.o
 
@@ -129,7 +169,7 @@ first_encryption.o: first_encryption.cpp.o
 
 # target to build an object file
 first_encryption.cpp.o:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/first_encryption.cpp.o
+	$(MAKE) -f CMakeFiles/encrypt.dir/build.make CMakeFiles/encrypt.dir/first_encryption.cpp.o
 .PHONY : first_encryption.cpp.o
 
 first_encryption.i: first_encryption.cpp.i
@@ -138,7 +178,7 @@ first_encryption.i: first_encryption.cpp.i
 
 # target to preprocess a source file
 first_encryption.cpp.i:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/first_encryption.cpp.i
+	$(MAKE) -f CMakeFiles/encrypt.dir/build.make CMakeFiles/encrypt.dir/first_encryption.cpp.i
 .PHONY : first_encryption.cpp.i
 
 first_encryption.s: first_encryption.cpp.s
@@ -147,7 +187,7 @@ first_encryption.s: first_encryption.cpp.s
 
 # target to generate assembly for a file
 first_encryption.cpp.s:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/first_encryption.cpp.s
+	$(MAKE) -f CMakeFiles/encrypt.dir/build.make CMakeFiles/encrypt.dir/first_encryption.cpp.s
 .PHONY : first_encryption.cpp.s
 
 # Help Target
@@ -157,8 +197,12 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... test"
+	@echo "... encrypt"
 	@echo "... edit_cache"
+	@echo "... decrypt"
+	@echo "... first_decryption.o"
+	@echo "... first_decryption.i"
+	@echo "... first_decryption.s"
 	@echo "... first_encryption.o"
 	@echo "... first_encryption.i"
 	@echo "... first_encryption.s"

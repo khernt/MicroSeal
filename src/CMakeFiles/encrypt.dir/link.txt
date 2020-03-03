@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/encrypt.dir/first_encryption.cpp.o  -o encrypt  /usr/local/lib/libseal-3.4.a -pthread 
