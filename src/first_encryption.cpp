@@ -13,7 +13,7 @@ int main()
 
     parms.set_coeff_modulus(CoeffModulus::BFVDefault(poly_modulus_degree));
 
-    parms.set_plain_modulus(1024);
+    parms.set_plain_modulus(2048);
 
     //context object
     auto context = SEALContext::Create(parms);
@@ -33,7 +33,7 @@ int main()
     //to decrypt we need an instance of decryptor
     Decryptor decryptor(context, secret_key);
 
-    int x = 21354626;
+    int x = 112345;
     Plaintext x_plain(to_string(x));
 
     cout << "The plain text we have encrypted. " + x_plain.to_string() << endl; // +  x_plain.to_string() << endl;
@@ -44,7 +44,10 @@ int main()
     savePrivKey(secret_key, "keys.txt");
     saveCipher(x_encrypted, "output.txt");
 
-    decryptoer.decrypt()
+    Plaintext decrypted_result;
+
+    decryptor.decrypt(x_encrypted, decrypted_result);
+    writeToFile("temp.txt", decrypted_result.to_string());
 
 
     
